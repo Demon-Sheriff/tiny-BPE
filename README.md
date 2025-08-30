@@ -1,11 +1,12 @@
 # `tiny-BPE`
 
 ### `BPE or byte pair encoding from a high level involves the following steps`
-<img width="1373" height="476" alt="image" src="https://github.com/user-attachments/assets/0ea664d6-92a8-4b4c-9e19-49ef9488c16a" />
+
+![alt text](image.png)
 
 `parallelization of file chunking`
 
-<img width="488" height="647" alt="image" src="https://github.com/user-attachments/assets/ccec2ffc-6bfd-4687-8fe2-f3128db57fb8" />
+![alt text](image-2.png)
 
 
 Before your favorite transformer model can understand language, it first has to tokenize it. 
@@ -16,7 +17,7 @@ Here we will be implementing a parallel and minimal implementation of it from sc
 ## a gentle intro to BPE
 before we dive into any code we'll understand the algorithm and a bit of its advantages / disadvantages with a small example.
 
-![](https://private-user-images.githubusercontent.com/142498048/482668784-0ea664d6-92a8-4b4c-9e19-49ef9488c16a.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTYzMDAxNTQsIm5iZiI6MTc1NjI5OTg1NCwicGF0aCI6Ii8xNDI0OTgwNDgvNDgyNjY4Nzg0LTBlYTY2NGQ2LTkyYTgtNGI0Yy05ZTE5LTQ5ZWY5NDg4YzE2YS5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwODI3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDgyN1QxMzA0MTRaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1jMmUxYTE5ZTY4OWIxMzJkMmM0NTM4NWEwMzYyNWEyMzg3ZWRlZjZlMzk2OGQ4MDhjZjI2ZWE2OGFhYTNkNWM3JlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.MvSY1wsV0RB8oYHM7E_LEwz8J6YJ7qgxk3g1_km-Xjc)
+![alt text](image.png)
 
 ### 1. **pre-tokenization**
 
@@ -93,8 +94,7 @@ this is where most of the meat is.
 
 ### **chunking a file to obtain initial pair frequencies**
 
-![](https://private-user-images.githubusercontent.com/142498048/482806168-ccec2ffc-6bfd-4687-8fe2-f3128db57fb8.png?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3NTYzMjAzNTUsIm5iZiI6MTc1NjMyMDA1NSwicGF0aCI6Ii8xNDI0OTgwNDgvNDgyODA2MTY4LWNjZWMyZmZjLTZiZmQtNDY4Ny04ZmUyLWYzMTI4ZGI1N2ZiOC5wbmc_WC1BbXotQWxnb3JpdGhtPUFXUzQtSE1BQy1TSEEyNTYmWC1BbXotQ3JlZGVudGlhbD1BS0lBVkNPRFlMU0E1M1BRSzRaQSUyRjIwMjUwODI3JTJGdXMtZWFzdC0xJTJGczMlMkZhd3M0X3JlcXVlc3QmWC1BbXotRGF0ZT0yMDI1MDgyN1QxODQwNTVaJlgtQW16LUV4cGlyZXM9MzAwJlgtQW16LVNpZ25hdHVyZT1hMzIzMjU2NGUyZThiYTI0YTU0NGQ5MGEwZmE3ZWMxMmQyNGUzZTY3ZmNmYTJjOTgzYjEyZTk0ZmRkYWI4OGUxJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCJ9.o7offeRM7n8--lhSW1Wz6tkXaJBVDC5l2ym8p-EHfbk)
-<br></br>
+![alt text](image-2.png)<br></br>
 
 but let's import the dependencies and establish our special token(s) first:
 
@@ -577,3 +577,5 @@ that said, **there’s always room for optimization, especially in the merge ste
 # NOTE(s): 
 
 ### `using techniques like reverse indexing or a priority queue to track the most frequent pairs can significantly speed things up for larger corpora.`
+![alt text](image-1.png)
+
